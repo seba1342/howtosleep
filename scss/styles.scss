@@ -1,0 +1,391 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+
+ /* Imports */
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+
+ /* Variables */
+  $primary-bg-color: #FFB86B;
+  $dark-color: #343a40;
+  $darker-color: #141d26;
+  $light-color: #ffffff;
+
+/* CSS */
+body {
+  overflow-x: hidden;
+}
+
+header {
+  padding: 150px 0;
+  position: relative;
+  top: 0;
+  min-height: 100vh;
+}
+
+section {
+  padding: 100px 0;
+  position: relative;
+}
+
+h1, h2 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+}
+
+h1 {
+  text-shadow: 2px 2px $darker-color;
+}
+
+h2 {
+  line-height: 1.5em;
+  letter-spacing: 0.05em;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+// Navigation Bar
+
+// Make navigation full screen when on mobile
+.navbar-nav {
+  height: calc(100vh - 50px) !important;
+  align-items: center;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+   height: auto !important;
+  }
+}
+
+.navbar .navbar-brand {
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  color: $primary-bg-color;
+  text-decoration: none;
+
+  @include media-breakpoint-up(md) {
+    left: auto;
+    transform: none;
+    padding: 0 20px;
+  }
+}
+
+// Align navigation links
+.navbar-collapse {
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    padding: 0 20px;
+    justify-content: flex-end;
+  }
+}
+
+.navbar .nav-item .nav-link {
+  display: inline-block;
+  margin: 0;
+
+  color: $primary-bg-color;
+  font-size: 3em;
+  font-weight: bolder;
+  text-transform: lowercase;
+  text-decoration: none;
+
+  // Underline effects
+  &:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 7px;
+    background-color: currentColor;
+    transition: 0.3s width ease;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 1em;
+    margin: 0 20px;
+
+    &:after {
+      height: 3px;
+    }
+  }
+}
+
+.navbar .nav-item .active,
+.navbar .nav-item .nav-link:hover {
+  &:after {
+    width: 100%;
+  }
+}
+
+// Animating the hamburger menu
+.icon-bar {
+	width: 22px;
+	height: 2px;
+	background-color: $primary-bg-color;
+	display: block;
+	transition: all 0.2s;
+	margin-top: 4px
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+}
+
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+.background-dark {
+  background-color: $dark-color;
+}
+
+.background-darker {
+  background-color: $darker-color;
+}
+
+.background-yellow {
+  background-color: $primary-bg-color;
+}
+
+.btn .icon {
+  margin: 0 10px 0 0;
+}
+
+.btn-yellow {
+  background: $primary-bg-color;
+}
+
+.lead {
+  margin-bottom: 1em;
+  letter-spacing: 0.05em;
+}
+
+p {
+  letter-spacing: 0.05em;
+  font-weight: 300;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0
+}
+
+#parallax-container {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    position: relative;
+    height: 100%;
+    z-index: -1;
+  }
+
+  & div {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  }
+}
+
+#parallax-container div {
+  &.moon {
+    background: url('/images/header/moon.png');
+    background-position: top right !important;
+    top: 25px;
+  }
+
+  &.cloud1 {
+    opacity: 0.9;
+    background: url('/images/header/cloud1.png');
+    background-position: top right !important;
+    top: 50px;
+    animation-name: cloud1;
+    animation-duration: 35s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &.cloud2 {
+    opacity: 0.9;
+    background: url('/images/header/cloud2.png');
+    background-position: top right !important;
+    top: 0px;
+    animation-name: cloud2;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &.mountains {
+    background: url('/images/header/mountains.png');
+    background-position: bottom left !important;
+    bottom: -25px;
+    left: -50px;
+  }
+
+  &.mountains2 {
+    background: url('/images/header/mountains2.png');
+    background-position: bottom center !important;
+    bottom: 0px;
+    right: -30px;
+  }
+
+  &.mountains3 {
+    background: url('/images/header/mountains3.png');
+    background-position: bottom right !important;
+    bottom: -25px;
+    right: -50px;
+  }
+}
+
+#parallax-mobile {
+  position: absolute;
+  bottom: -2px;
+  display: block;
+  background: url('/images/header/mobile-header.png') no-repeat center bottom / cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.sheep {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    position: absolute;
+    background: url('/images/header/sheep.png');
+    background-size: contain !important;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    bottom: -5px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.headline {
+  position: relative;
+  z-index: 2;
+  color: $primary-bg-color;
+}
+
+.text-yellow {
+  color: $primary-bg-color;
+}
+
+section ul li {
+  & a:hover {
+    color: $dark-color;
+    background-color: $primary-bg-color;
+  }
+}
+
+footer {
+  color: $primary-bg-color;
+
+  & a:hover {
+    color: $darker-color;
+    background-color: $primary-bg-color;
+  }
+}
+
+p {
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+}
+
+.relax-content {
+  position: relative;
+  z-index: 2;
+
+  & a:hover {
+    color: $primary-bg-color;
+    background-color: $dark-color;
+  }
+}
+
+.ground {
+  display: initial;
+  position: absolute;
+  background: url('/images/relax/bottom-border.png');
+  background-size: contain !important;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  bottom: -5px;
+  width: 100%;
+  height: 100%;
+}
+
+// Animations
+
+@keyframes cloud1 {
+  from {
+    margin-left: 25%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: -100%;
+    width: 100%;
+  }
+}
+
+@keyframes cloud2 {
+  from {
+    margin-left: 35%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: -100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,296 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+/* Imports */
+/* Variables */
+/* CSS */
+body {
+  overflow-x: hidden; }
+
+header {
+  padding: 150px 0;
+  position: relative;
+  top: 0;
+  min-height: 100vh; }
+
+section {
+  padding: 100px 0;
+  position: relative; }
+
+h1, h2 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700; }
+
+h1 {
+  text-shadow: 2px 2px #141d26; }
+
+h2 {
+  line-height: 1.5em;
+  letter-spacing: 0.05em; }
+
+a {
+  color: inherit;
+  text-decoration: underline; }
+
+.vertical-align {
+  display: flex;
+  align-items: center; }
+
+.navbar-nav {
+  height: calc(100vh - 50px) !important;
+  align-items: center;
+  justify-content: center; }
+  @media (min-width: 768px) {
+    .navbar-nav {
+      height: auto !important; } }
+
+.navbar .navbar-brand {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FFB86B;
+  text-decoration: none; }
+  @media (min-width: 768px) {
+    .navbar .navbar-brand {
+      left: auto;
+      transform: none;
+      padding: 0 20px; } }
+
+.navbar-collapse {
+  justify-content: center; }
+  @media (min-width: 768px) {
+    .navbar-collapse {
+      padding: 0 20px;
+      justify-content: flex-end; } }
+
+.navbar .nav-item .nav-link {
+  display: inline-block;
+  margin: 0;
+  color: #FFB86B;
+  font-size: 3em;
+  font-weight: bolder;
+  text-transform: lowercase;
+  text-decoration: none; }
+  .navbar .nav-item .nav-link:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 7px;
+    background-color: currentColor;
+    transition: 0.3s width ease; }
+  @media (min-width: 768px) {
+    .navbar .nav-item .nav-link {
+      font-size: 1em;
+      margin: 0 20px; }
+      .navbar .nav-item .nav-link:after {
+        height: 3px; } }
+
+.navbar .nav-item .active:after,
+.navbar .nav-item .nav-link:hover:after {
+  width: 100%; }
+
+.icon-bar {
+  width: 22px;
+  height: 2px;
+  background-color: #FFB86B;
+  display: block;
+  transition: all 0.2s;
+  margin-top: 4px; }
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important; }
+
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%; }
+
+.navbar-toggler .middle-bar {
+  opacity: 0; }
+
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%; }
+
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0); }
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1; }
+
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0); }
+
+.background-dark {
+  background-color: #343a40; }
+
+.background-darker {
+  background-color: #141d26; }
+
+.background-yellow {
+  background-color: #FFB86B; }
+
+.btn .icon {
+  margin: 0 10px 0 0; }
+
+.btn-yellow {
+  background: #FFB86B; }
+
+.lead {
+  margin-bottom: 1em;
+  letter-spacing: 0.05em; }
+
+p {
+  letter-spacing: 0.05em;
+  font-weight: 300; }
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0; }
+
+#parallax-container {
+  display: none; }
+  @media (min-width: 768px) {
+    #parallax-container {
+      display: block;
+      position: relative;
+      height: 100%;
+      z-index: -1; } }
+  #parallax-container div {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat !important;
+    background-size: contain !important; }
+
+#parallax-container div.moon {
+  background: url("/images/header/moon.png");
+  background-position: top right !important;
+  top: 25px; }
+
+#parallax-container div.cloud1 {
+  opacity: 0.9;
+  background: url("/images/header/cloud1.png");
+  background-position: top right !important;
+  top: 50px;
+  animation-name: cloud1;
+  animation-duration: 35s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+#parallax-container div.cloud2 {
+  opacity: 0.9;
+  background: url("/images/header/cloud2.png");
+  background-position: top right !important;
+  top: 0px;
+  animation-name: cloud2;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+#parallax-container div.mountains {
+  background: url("/images/header/mountains.png");
+  background-position: bottom left !important;
+  bottom: -25px;
+  left: -50px; }
+
+#parallax-container div.mountains2 {
+  background: url("/images/header/mountains2.png");
+  background-position: bottom center !important;
+  bottom: 0px;
+  right: -30px; }
+
+#parallax-container div.mountains3 {
+  background: url("/images/header/mountains3.png");
+  background-position: bottom right !important;
+  bottom: -25px;
+  right: -50px; }
+
+#parallax-mobile {
+  position: absolute;
+  bottom: -2px;
+  display: block;
+  background: url("/images/header/mobile-header.png") no-repeat center bottom/cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1; }
+  @media (min-width: 768px) {
+    #parallax-mobile {
+      display: none; } }
+
+.sheep {
+  display: none; }
+  @media (min-width: 768px) {
+    .sheep {
+      display: block;
+      position: absolute;
+      background: url("/images/header/sheep.png");
+      background-size: contain !important;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      bottom: -5px;
+      z-index: 1;
+      width: 100%;
+      height: 100%; } }
+
+.headline {
+  position: relative;
+  z-index: 2;
+  color: #FFB86B; }
+
+.text-yellow {
+  color: #FFB86B; }
+
+section ul li a:hover {
+  color: #343a40;
+  background-color: #FFB86B; }
+
+footer {
+  color: #FFB86B; }
+  footer a:hover {
+    color: #141d26;
+    background-color: #FFB86B; }
+
+p {
+  line-height: 1.6em;
+  letter-spacing: 0.05em; }
+
+.relax-content {
+  position: relative;
+  z-index: 2; }
+  .relax-content a:hover {
+    color: #FFB86B;
+    background-color: #343a40; }
+
+.ground {
+  display: initial;
+  position: absolute;
+  background: url("/images/relax/bottom-border.png");
+  background-size: contain !important;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  bottom: -5px;
+  width: 100%;
+  height: 100%; }
+
+@keyframes cloud1 {
+  from {
+    margin-left: 25%;
+    width: 100%; }
+  to {
+    margin-left: -100%;
+    width: 100%; } }
+
+@keyframes cloud2 {
+  from {
+    margin-left: 35%;
+    width: 100%; }
+  to {
+    margin-left: -100%;
+    width: 100%; } }
